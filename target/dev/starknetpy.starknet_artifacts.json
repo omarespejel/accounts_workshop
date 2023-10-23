@@ -1,0 +1,1 @@
+{"version":1,"contracts":[{"id":"np8pii99pel12","package_name":"starknetpy","contract_name":"Ownable","artifacts":{"sierra":"starknetpy_Ownable.sierra.json","casm":"starknetpy_Ownable.casm.json"}}]}
