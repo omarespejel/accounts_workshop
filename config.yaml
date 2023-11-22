@@ -21,3 +21,16 @@ SETTINGS:
   MAX_FEE: 10000000000000000
   TARGET_DIR: "target/dev/"
   FUNDING_AMOUNT: 1000000000000000
+
+CAIRO_CONTRACTS_PATHS:
+  ACCOUNTS:
+    HELLO: "src/accounts/hello_account.cairo"
+    STANDARD: "src/accounts/standard_account.cairo"
+    ETH_SIGNATURE: "src/accounts/eth_account.cairo"
+  TOKEN:
+    ERC20: "src/token/TDERC20.cairo"
+  TUTORIAL:
+    PLAYER_REGISTRY: "src/tutorial/PlayerRegistry.cairo"
+  EVALUATOR: "src/evaluator.cairo"
+  
+    
