@@ -1,6 +1,6 @@
-// mod evaluator;
-// mod tutorial;
-// mod token;
+mod evaluator;
+mod tutorial;
+mod token;
 mod accounts;
 // use starknet::ContractAddress;
 
