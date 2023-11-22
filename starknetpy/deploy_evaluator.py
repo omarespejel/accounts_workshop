@@ -1,13 +1,10 @@
 import asyncio
 from importlib.metadata import version
 
-from configs import get_full_node_client, get_full_node_client_config, load_config
-from contracts import (
-    declare_and_deploy_contract,
-    fund_account,
-    get_account,
-    load_contract_data,
-)
+from configs import (get_full_node_client, get_full_node_client_config,
+                     load_config)
+from contracts import (declare_and_deploy_contract, fund_account, get_account,
+                       load_contract_data)
 from utils import colored_print
 
 

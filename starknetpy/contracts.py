@@ -4,7 +4,8 @@ from pathlib import Path
 from typing import Union
 
 from configs import get_network_config
-from starknet_py.common import create_casm_class, create_sierra_compiled_contract
+from starknet_py.common import (create_casm_class,
+                                create_sierra_compiled_contract)
 from starknet_py.contract import Contract
 from starknet_py.hash.casm_class_hash import compute_casm_class_hash
 from starknet_py.hash.selector import get_selector_from_name
@@ -114,7 +115,7 @@ def get_account_0_private_key(client, config):
     key_pair = KeyPair(private_key=0, public_key=0)
     account = Account(
         client=client,
-        address=0x017c1c83feb4e8e4559be027f94121837a3b7a0564e14b9861a7cd4765ef1f05,
+        address=0x017C1C83FEB4E8E4559BE027F94121837A3B7A0564E14B9861A7CD4765EF1F05,
         key_pair=key_pair,
         chain=chain,
     )
