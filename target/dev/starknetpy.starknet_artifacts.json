@@ -1,1 +1,1 @@
-{"version":1,"contracts":[{"id":"np8pii99pel12","package_name":"starknetpy","contract_name":"Ownable","artifacts":{"sierra":"starknetpy_Ownable.sierra.json","casm":"starknetpy_Ownable.casm.json"}}]}
+{"version":1,"contracts":[{"id":"a8tvgn1mf8dcm","package_name":"starknetpy","contract_name":"HelloAccount","artifacts":{"sierra":"starknetpy_HelloAccount.contract_class.json","casm":"starknetpy_HelloAccount.compiled_contract_class.json"}}]}
