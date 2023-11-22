@@ -1,17 +1,15 @@
- ####
-# Tutorial Deployment:
-# - deploy 'player_registry'
-# - deploy 'TDERC20'
-# - deploy 'evaluator'
- ####
 import asyncio
 from importlib.metadata import version
 
-from configs import (get_full_node_client, get_full_node_client_config,
-                     load_config)
-from contracts import (compile_contract, declare_and_deploy_contract,
-                       fund_account, get_account, get_account_0_private_key)
 from utils import colored_print
+
+from accounts_workshop.configs import (get_full_node_client,
+                                       get_full_node_client_config,
+                                       load_config)
+from accounts_workshop.contracts_utils import (compile_contract,
+                                               declare_and_deploy_contract,
+                                               fund_account, get_account,
+                                               get_account_0_private_key)
 
 
 async def main():

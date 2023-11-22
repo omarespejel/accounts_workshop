@@ -52,7 +52,7 @@ mod PlayersRegistry {
     // use starknet_cairo_101::token::ITDERC20::ITDERC20DispatcherTrait;
     // use starknet_cairo_101::token::ITDERC20::ITDERC20Dispatcher;
     // use core::hash::TupleSize3LegacyHash;
-    use starknetpy::tutorial::helper;
+    use accounts_workshop::tutorial::helper;
 
     ////////////////////////////////
     // STORAGE

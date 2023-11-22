@@ -3,7 +3,6 @@ import subprocess
 from pathlib import Path
 from typing import Union
 
-from configs import get_network_config
 from starknet_py.common import (create_casm_class,
                                 create_sierra_compiled_contract)
 from starknet_py.contract import Contract
@@ -16,10 +15,12 @@ from starknet_py.net.client import Client
 from starknet_py.net.client_models import Call
 from starknet_py.net.models.chains import StarknetChainId
 from starknet_py.net.signer.stark_curve_signer import KeyPair
-from utils import colored_print, int_to_uint256
+
+from accounts_workshop.configs import get_network_config
+from accounts_workshop.utils import colored_print, int_to_uint256
 
 
-def compile_contract(target_dir):
+def compile_contract(contract_name, contract_dir, target_dir):
     colored_print("Cleaning compiler output...", "yellow")
     subprocess.run(["scarb", "clean"])
 
@@ -40,22 +41,25 @@ def compile_contract(target_dir):
     else:
         colored_print("Contract compiled successfully.", "green")
 
+    contract_dir = Path(contract_dir)
     target_dir = Path(target_dir)
     casm_file, sierra_file = None, None
 
     for json_file in target_dir.glob("*.json"):
-        if json_file.name.endswith(".compiled_contract_class.json"):
+        if json_file.name.endswith(f"{contract_name}.compiled_contract_class.json"):
             casm_file = json_file
-        elif json_file.name.endswith(".contract_class.json"):
+        elif json_file.name.endswith(f"{contract_name}.contract_class.json"):
             sierra_file = json_file
 
     if casm_file is None or sierra_file is None:
         raise FileNotFoundError(
-            "One or both of the compiled files (for casm code: compiled_contract_class, for sierra code: contract_class.json) were not found."
+            f"For contract {contract_name}: One or both of the compiled files (for casm code: compiled_contract_class, for sierra code: contract_class.json) were not found."
         )
 
-    colored_print(f"CASM compiled contract path: {casm_file}", "green")
-    colored_print(f"Sierra compiled contract path: {sierra_file}", "green")
+    colored_print(f"{contract_name}: CASM compiled contract path: {casm_file}", "green")
+    colored_print(
+        f"{contract_name}: Sierra compiled contract path: {sierra_file}", "green"
+    )
 
     with open(casm_file, "r") as casm_file:
         casm_compiled_contract = casm_file.read()
@@ -190,7 +194,7 @@ def starkgate_eth_token_contract(
 ) -> Contract:
     colored_print("Loading Ethereum Contract...", "blue")
     paying_account = get_account(client, config)
-    abi_path = Path("starknetpy") / "data" / "ERC20Contract_ABI.json"
+    abi_path = Path("accounts_workshop") / "data" / "ERC20Contract_ABI.json"
     with open(abi_path, "r") as f:
         abi_data = json.load(f)
     colored_print(f"Loaded ABI from {abi_path}", "green")

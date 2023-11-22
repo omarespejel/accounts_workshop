@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "starknetpy"
+name = "accounts_workshop"
 version = "0.1.0"
 description = ""
 authors = ["Omar U. Espejel"]

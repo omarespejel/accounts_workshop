@@ -26,10 +26,10 @@ trait WorkshopSupportContractTrait<TContractState> {
 mod WorkshopSupportContract {
     use starknet::ContractAddress;
     use starknet::get_caller_address;
-    use starknetpy::tutorial::IPlayerRegistry::IPlayerRegistryDispatcherTrait;
-    use starknetpy::tutorial::IPlayerRegistry::IPlayerRegistryDispatcher;
-    use starknetpy::tutorial::IWorkshopSupportContract::IWorkshopSupportContractDispatcherTrait;
-    use starknetpy::tutorial::IWorkshopSupportContract::IWorkshopSupportContractDispatcher;
+    use accounts_workshop::tutorial::IPlayerRegistry::IPlayerRegistryDispatcherTrait;
+    use accounts_workshop::tutorial::IPlayerRegistry::IPlayerRegistryDispatcher;
+    use accounts_workshop::tutorial::IWorkshopSupportContract::IWorkshopSupportContractDispatcherTrait;
+    use accounts_workshop::tutorial::IWorkshopSupportContract::IWorkshopSupportContractDispatcher;
 
     const ERC20_BASE: u128 = 1000000000000000000;
 

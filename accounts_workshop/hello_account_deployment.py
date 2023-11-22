@@ -3,9 +3,12 @@ from importlib.metadata import version
 
 from configs import (get_full_node_client, get_full_node_client_config,
                      load_config)
-from contracts import (compile_contract, declare_and_deploy_contract,
-                       fund_account, get_account, get_account_0_private_key)
 from utils import colored_print
+
+from accounts_workshop.contracts_utils import (compile_contract,
+                                               declare_and_deploy_contract,
+                                               fund_account, get_account,
+                                               get_account_0_private_key)
 
 
 async def main():
@@ -13,19 +16,11 @@ async def main():
     colored_print(f"Starknet py version: {version('starknet_py')}", "yellow")
     config = load_config()
 
-    # funding_amount = (
-    #     config["SETTINGS"]["FUNDING_AMOUNT"] / 1e18
-    # )  # fetching from config.yaml
-    # to_address = config["ACCOUNTS"]["TESTNET"]["ADDRESS"]
-
     # Setup Client and Account Information
     node_url = get_full_node_client_config(config)
     full_node_client = await get_full_node_client(node_url)
     # account = get_account(full_node_client, config)
     account = get_account_0_private_key(full_node_client, config)
-
-    # Fund Account
-    # await fund_account(full_node_client, funding_amount, to_address, config)
 
     # Compile and Load Contract Data
     (
@@ -34,10 +29,6 @@ async def main():
         _,
         _,
     ) = compile_contract(config["SETTINGS"]["TARGET_DIR"])
-
-    # constructor_args = {
-    #     "init_owner": account.address,
-    # }
 
     # Contructor without arguments
     constructor_args = {}

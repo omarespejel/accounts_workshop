@@ -22,15 +22,28 @@ SETTINGS:
   TARGET_DIR: "target/dev/"
   FUNDING_AMOUNT: 1000000000000000
 
+# The contract name includes the project name at the beginning.
 CAIRO_CONTRACTS_PATHS:
   ACCOUNTS:
-    HELLO: "src/accounts/hello_account.cairo"
-    STANDARD: "src/accounts/standard_account.cairo"
-    ETH_SIGNATURE: "src/accounts/eth_account.cairo"
+    HELLO: 
+      NAME: accounts_workshop_HelloAccount
+      PATH: "src/accounts/hello_account.cairo"
+    STANDARD: 
+      NAME: accounts_workshop_Account
+      PATH: "src/accounts/standard_account.cairo"
+    ETH_SIGNATURE:
+      NAME: accounts_workshop_EthSignatureAccount
+      PATH: "src/accounts/eth_account.cairo"
   TOKEN:
-    ERC20: "src/token/TDERC20.cairo"
+    ERC20:
+      NAME: accounts_workshop_TDERC20
+      PATH: "src/token/TDERC20.cairo"
   TUTORIAL:
-    PLAYER_REGISTRY: "src/tutorial/PlayerRegistry.cairo"
-  EVALUATOR: "src/evaluator.cairo"
+    PLAYER_REGISTRY: 
+      NAME: accounts_workshop_PlayersRegistry
+      PATH: "src/tutorial/PlayerRegistry.cairo"
+  EVALUATOR: 
+    NAME: accounts_workshop_Evaluator
+    PATH: "src/evaluator.cairo"
   
     

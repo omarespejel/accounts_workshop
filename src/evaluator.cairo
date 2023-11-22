@@ -39,9 +39,9 @@ mod Evaluator {
     use starknet::syscalls::get_execution_info_syscall;
     use starknet::SyscallResultTrait;
 
-    use starknetpy::tutorial::IWorkshopSupportContract::IWorkshopSupportContractDispatcherTrait;
-    use starknetpy::tutorial::IWorkshopSupportContract::IWorkshopSupportContractDispatcher;
-    use starknetpy::tutorial::IAccountsInterfaces::{
+    use accounts_workshop::tutorial::IWorkshopSupportContract::IWorkshopSupportContractDispatcherTrait;
+    use accounts_workshop::tutorial::IWorkshopSupportContract::IWorkshopSupportContractDispatcher;
+    use accounts_workshop::tutorial::IAccountsInterfaces::{
         IMultiSigDispatcherTrait, IMultiSigDispatcher, IAccountSigDispatcherTrait,
         IAccountSigDispatcher
     };

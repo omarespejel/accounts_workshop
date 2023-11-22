@@ -1,5 +1,5 @@
 [package]
-name = "starknetpy"
+name = "accounts_workshop"
 version = "0.1.0"
 
 [dependencies]

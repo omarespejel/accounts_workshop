@@ -31,7 +31,7 @@ trait TDERC20Trait<TContractState> {
 }
 
 #[starknet::contract]
-mod tderc20 {
+mod TDERC20 {
     use starknet::get_caller_address;
     use starknet::ContractAddress;
     use openzeppelin::token::erc20::erc20::ERC20Component;
